@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAGIUM AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#">
+        <span class="brand-mark">R</span>
+        <span><strong>AGIUM AI</strong><small>Chat with your documents</small></span>
+      </a>
+
+      <nav class="nav">
+        <button class="nav-item active"><span class="nav-icon">⌂</span>Home</button>
+        <button class="nav-item" id="historyBtn"><span class="nav-icon">◷</span>Chat History</button>
+        <button class="nav-item" id="settingsBtn"><span class="nav-icon">⚙</span>Settings</button>
+      </nav>
+
+      <section class="upload-card">
+        <div class="upload-symbol">⇧</div>
+        <h3>Upload Document</h3>
+        <p>PDF, DOCX, TXT</p>
+        <label class="choose-file" for="fileInput">Choose File</label>
+        <input id="fileInput" type="file" accept=".pdf,.doc,.docx,.txt" hidden />
+        <span id="fileName" class="file-name">No document selected</span>
+      </section>
+
+      <div class="sidebar-footer">
+        <span class="bolt">ϟ</span>
+        <span><small></small><strong>RAGIUM AI</strong></span>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-title"><span class="status-orb"></span>Your AI Knowledge Assistant</div>
+        <div class="topbar-actions">
+          <button class="icon-btn" id="themeBtn" title="Toggle theme">☾</button>
+          <div class="avatar">R<span class="online-dot"></span></div>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <div class="document-panel panel">
+          <div class="panel-toolbar">
+            <div class="doc-title"><span class="doc-icon">▤</span><span id="docTitle">Document.pdf</span></div>
+            <div class="pdf-controls">
+              <span id="pageCount">1 / 1</span>
+              <button class="small-control" id="zoomOut">−</button>
+              <span id="zoomValue">100%</span>
+              <button class="small-control" id="zoomIn">+</button>
+              <button class="small-control" id="fullscreenBtn" title="Fullscreen">⛶</button>
+            </div>
+            <button class="more-btn" title="More options">⋮</button>
+          </div>
+          <div class="document-stage" id="documentStage">
+            <div class="paper" id="paper">
+              <div class="paper-hero">
+                <div class="paper-copy">
+                  <h1>Build <em>Smarter</em><br>Knowledge.</h1>
+                  <span class="red-rule"></span>
+                  <p>Your documents.<br>Your knowledge. Powered by AI.</p>
+                </div>
+                <div class="abstract-art"><div class="art-ring"></div><div class="art-block"></div></div>
+              </div>
+              <div class="paper-content">
+                <span class="paper-kicker">DOCUMENT WORKSPACE</span>
+                <h2>Your document, understood.</h2>
+                <p>Upload a PDF, DOCX, or TXT file to begin. Ragium AI will use your document as the knowledge source for grounded answers.</p>
+                <div class="paper-line long"></div><div class="paper-line"></div><div class="paper-line medium"></div>
+                <h3>Ask questions. Find answers.</h3>
+                <p>When a document is connected, ask the assistant to explain concepts, summarize sections, or find specific information.</p>
+                <div class="paper-note"><span>✦</span> Answers grounded in your uploaded content.</div>
+              </div>
+            </div>
+            <div class="empty-doc" id="emptyDoc">
+              <div class="empty-doc-icon">▤</div>
+              <h2>Your document will appear here</h2>
+              <p>Upload a file using the button in the sidebar.</p>
+            </div>
+          </div>
+          <div class="document-status"><span class="tiny-green"></span><span id="docStatus">Workspace ready</span><span class="status-right">PDF preview area</span></div>
+        </div>
+
+        <section class="chat-panel panel">
+          <div class="chat-header">
+            <div class="assistant-title"><span class="assistant-icon">✦</span><div><strong>RAGIUM CONNECT</strong><small><span class="tiny-green"></span> Online</small></div></div>
+            <button class="icon-btn settings-chat" id="chatOptions" title="Chat options">☷</button>
+          </div>
+
+          <div class="messages" id="messages">
+            <div class="message-row assistant-row">
+              <div class="message-avatar">✦</div>
+              <div class="bubble assistant-bubble"><strong>Hello! 👋</strong><br>I'm Ragium AI. Ask me anything about your uploaded document.</div>
+            </div>
+            <div class="welcome-hint">
+              <span class="hint-label">TRY ASKING</span>
+              <button class="suggestion">What is this document about?</button>
+              <button class="suggestion">Summarize the key points</button>
+            </div>
+          </div>
+
+          <form class="composer" id="chatForm">
+            <button type="button" class="attach-btn" id="attachBtn" title="Upload document">⌁</button>
+            <input id="questionInput" type="text" placeholder="Ask a question about your document..." autocomplete="off" />
+            <button class="send-btn" type="submit" aria-label="Send message">➤</button>
+          </form>
+          <div class="chat-footnote">Ragium AI can make mistakes. Verify important information.</div>
+        </section>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
