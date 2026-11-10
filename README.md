@@ -3,7 +3,8 @@
 ## Project structure
 - `main.py` — FastAPI backend and your RAG pipeline
 - `requirements.txt` — Python dependencies
-- `index.html`, `style.css`, `script.js` — website frontend
+- `public/` — website frontend (`index.html`, `style.css`, `script.js`), published by Netlify
+- `netlify.toml` — Netlify build settings (publishes `public/`, no build step)
 
 ## 1. Install dependencies
 Open a terminal in this folder:
@@ -51,7 +52,7 @@ Interactive API docs: `http://127.0.0.1:8000/docs`.
 ## 4. Run the website
 In another terminal, from this folder:
 ```bash
-python -m http.server 5500
+python -m http.server 5500 --directory public
 ```
 Open `http://127.0.0.1:5500`.
 

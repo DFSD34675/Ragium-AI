@@ -1,0 +1,4 @@
+# The site is a static frontend with no build step.
+# Only the files in public/ are published; the Python backend (main.py) is not deployed by Netlify.
+[build]
+  publish = "public"
